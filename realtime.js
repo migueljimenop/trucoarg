@@ -43,6 +43,10 @@ module.exports = function(server){
 		console.log('failed connection to socket.io:', message);
 		accept(null, false);
 	}
+	// Client
+	var socket = io({
+	    transports: ['websocket'],
+	});
 
 	//Realiza la conexion de un nuevo usuario con socket.io.        
 	io.on('connection', function(socket){ 
